@@ -1,4 +1,5 @@
-ifeq ($(TARGET_BOOTLOADER_BOARD_NAME),GT-I9103)
+# Rename this file to Android.mk to build in AOSP
+ifeq ($(TARGET_BOOTLOADER_BOARD_NAME),i9103)
 
 # Prevent conflict with CM9 kernel.mk build task
 ifeq ($(TARGET_AUTO_KDIR),)
@@ -57,13 +58,13 @@ endif
 
 # Default board defconfig
 ifeq ($(TARGET_KERNEL_CONFIG),)
-    BLD_CONF=tegra_n1_defconfig
+    BLD_CONF=cyanogenmod_i9103_defconfig
 else
     BLD_CONF=$(TARGET_KERNEL_CONFIG)
 endif
 
 ifeq ($(KERNEL_SRC_DIR),)
-    KERNEL_SRC_DIR := $(ROOTDIR)kernel/samsung/i9103
+    KERNEL_SRC_DIR := $(ROOTDIR)kernel/samsung/n1
 endif
 
 ###############################################################################
